@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4F5254"
+    android:divider="@drawable/ic_launcher_background"
+    android:gravity="center_horizontal|center_vertical"
+    android:orientation="vertical"
+    tools:context=".MainActivity7">
+
+    <TextView
+        android:id="@+id/categoriaEncabezado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D17575"
+        android:gravity="center_vertical"
+        android:text="@string/categor_as"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/listPreferredItemPaddingEnd">
+
+                <ImageButton
+                    android:id="@+id/imageRomantico"
+                    android:layout_width="match_parent"
+                    android:layout_height="247dp"
+                    android:contentDescription="@string/romantico"
+                    android:src="@drawable/tresmetros" />
+
+                <TextView
+                    android:id="@+id/textRomantico"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/almendra_sc"
+                    android:gravity="center_horizontal"
+                    android:text="@string/rom_ntico"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/listPreferredItemPaddingStart">
+
+                <ImageButton
+                    android:id="@+id/imageeTerror"
+                    android:layout_width="wrap_content"
+                    android:layout_height="247dp"
+                    android:contentDescription="@string/it"
+                    android:src="@drawable/it" />
+
+                <TextView
+                    android:id="@+id/textTerror"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/caesar_dressing"
+                    android:text="@string/terror"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/listPreferredItemPaddingStart">
+
+                <ImageButton
+                    android:id="@+id/imageAventura"
+                    android:layout_width="match_parent"
+                    android:layout_height="238dp"
+                    android:background="#FFFFFF"
+                    android:contentDescription="@string/quijote"
+                    android:src="@drawable/quijotee" />
+
+                <TextView
+                    android:id="@+id/textAventura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/aventura"
+                    android:textColor="#131313"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/listPreferredItemPaddingStart">
+
+                <ImageButton
+                    android:id="@+id/imageJuvenil"
+                    android:layout_width="match_parent"
+                    android:layout_height="211dp"
+                    android:contentDescription="@string/juvenil"
+                    android:src="@drawable/eleanorparkaaa" />
+
+                <TextView
+                    android:id="@+id/textJuvenil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/juvenilText"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
