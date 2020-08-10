@@ -34,6 +34,19 @@ public class MainActivity extends AppCompatActivity {
                 Cursor cursor = admin.validar(campousuario.getText().toString(),campopass.getText().toString());
                 if(cursor.getCount()>0){
                     Toast.makeText(this, "USUARIO EXISTE", Toast.LENGTH_SHORT).show();
+                    if(campousuario.getText().toString().equals("admin")) {
+                        Intent pasar = new Intent(this, IngresoBaseDeDatos.class);
+                        startActivity(pasar);
+
+                    }
+                    else{
+                        Intent pasar1 = new Intent(this, MainActivity4.class);
+                        startActivity(pasar1);
+                    }
+
+
+
+
                 }   else {
                     Toast.makeText(this, "Usuario no existe, por favor registrese", Toast.LENGTH_SHORT).show();
                 }

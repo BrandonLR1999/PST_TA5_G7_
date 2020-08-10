@@ -3,6 +3,7 @@ package com.example.amst7;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -89,5 +90,11 @@ public class IngresoBaseDeDatos extends AppCompatActivity {
         }else{
             Toast.makeText(this,"Ingrese un código",Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void visualizar(View view){
+        //Intent visualizar1 = new Intent(this,MainActivity3.class);
+        //startActivity(visualizar1);
+        finish();
     }
 }
