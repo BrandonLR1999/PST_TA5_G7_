@@ -3,6 +3,7 @@ package com.example.amst7;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -46,8 +47,9 @@ public class MainActivity6 extends AppCompatActivity implements View.OnClickList
         builder.setNegativeButton("Si", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                finishAffinity();
-                System.exit(0);
+                Intent salir = new Intent(MainActivity6.this, MainActivity.class);
+                startActivity(salir);
+                finish();
             }
         });
         builder.setPositiveButton("No", new DialogInterface.OnClickListener() {

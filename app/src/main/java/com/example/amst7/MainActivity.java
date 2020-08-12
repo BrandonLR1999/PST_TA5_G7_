@@ -37,16 +37,13 @@ public class MainActivity extends AppCompatActivity {
                     if(campousuario.getText().toString().equals("admin")) {
                         Intent pasar = new Intent(this, IngresoBaseDeDatos.class);
                         startActivity(pasar);
-
                     }
                     else{
                         Intent pasar1 = new Intent(this, MainActivity4.class);
+                        pasar1.putExtra("usuario",campousuario.getText().toString());
+                        pasar1.putExtra("genero","todo");
                         startActivity(pasar1);
                     }
-
-
-
-
                 }   else {
                     Toast.makeText(this, "Usuario no existe, por favor registrese", Toast.LENGTH_SHORT).show();
                 }

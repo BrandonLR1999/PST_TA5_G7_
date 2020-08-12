@@ -39,6 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="247dp"
                     android:contentDescription="@string/romantico"
+                    android:onClick="click"
                     android:src="@drawable/tresmetros" />
 
                 <TextView

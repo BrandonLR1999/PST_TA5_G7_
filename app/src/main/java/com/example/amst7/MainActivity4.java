@@ -2,23 +2,42 @@ package com.example.amst7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity4<i> extends AppCompatActivity {
     private ListView lista;
     //int[] datosImg = {};
     int [] datosImg = {R.drawable.imagen1,R.drawable.imagen2,R.drawable.imagen3, R.drawable.imagen4};
     //, R.drawable.imagen5, R.drawable.imagen6
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
+        String[][] listado = obtenerDatos();
+        lista = (ListView) findViewById(R.id.id_listView);
+        lista.setAdapter(new Adaptador(this, listado, datosImg));
+        Bundle bundle = getIntent().getExtras();
+        String usuario = bundle.getString("usuario".toString());
+        String todo = bundle.getString("genero".toString());
+        TextView texto= (TextView)findViewById(R.id.textView12);
+        texto.setText(todo);
+    }
 
+    public void verCategoria(View view) {
+        Intent cat= new Intent(this,MainActivity7.class);
+        startActivity(cat);
+    }
+    public void verPerfil(View view){
+        Intent perfil = new Intent(this,MainActivity6.class);
+        startActivity(perfil);
+    }
+    public String[][] obtenerDatos(){
         int contador = 0;
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
@@ -39,12 +58,6 @@ public class MainActivity4<i> extends AppCompatActivity {
         } while (fila.moveToNext());
         BaseDeDatos.close();
         admin.close();
-
-        lista = (ListView) findViewById(R.id.id_listView);
-        lista.setAdapter(new Adaptador(this, listado, datosImg));
-    }
-
-    public void cerrar(View view) {
-        finish();
+        return listado;
     }
 }

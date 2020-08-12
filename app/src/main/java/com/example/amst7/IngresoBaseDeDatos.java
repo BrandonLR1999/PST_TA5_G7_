@@ -93,8 +93,8 @@ public class IngresoBaseDeDatos extends AppCompatActivity {
     }
 
     public void visualizar(View view){
-        //Intent visualizar1 = new Intent(this,MainActivity3.class);
-        //startActivity(visualizar1);
-        finish();
+        Intent visualizar1 = new Intent(this,MainActivity4.class);
+        startActivity(visualizar1);
+
     }
 }

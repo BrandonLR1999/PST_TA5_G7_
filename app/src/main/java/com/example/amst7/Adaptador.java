@@ -25,7 +25,6 @@ public class Adaptador extends BaseAdapter {
         this.datosimg = imagenes;
         inflater = (LayoutInflater)contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
     }
-
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         final View vista = inflater.inflate(R.layout.elemento_lista, null);
