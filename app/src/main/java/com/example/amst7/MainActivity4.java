@@ -12,18 +12,16 @@ import android.widget.TextView;
 
 public class MainActivity4<i> extends AppCompatActivity {
     private ListView lista;
-    //int[] datosImg = {};
-    int [] datosImg = {R.drawable.imagen1,R.drawable.imagen2,R.drawable.imagen3, R.drawable.imagen4};
-    //, R.drawable.imagen5, R.drawable.imagen6
+    String usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
         String[][] listado = obtenerDatos();
         lista = (ListView) findViewById(R.id.id_listView);
-        lista.setAdapter(new Adaptador(this, listado, datosImg));
+        lista.setAdapter(new Adaptador(this, listado));
         Bundle bundle = getIntent().getExtras();
-        String usuario = bundle.getString("usuario".toString());
+        usuario = bundle.getString("usuario".toString());
         String todo = bundle.getString("genero".toString());
         TextView texto= (TextView)findViewById(R.id.textView12);
         texto.setText(todo);
@@ -35,6 +33,7 @@ public class MainActivity4<i> extends AppCompatActivity {
     }
     public void verPerfil(View view){
         Intent perfil = new Intent(this,MainActivity6.class);
+        perfil.putExtra("usuario",usuario);
         startActivity(perfil);
     }
     public String[][] obtenerDatos(){

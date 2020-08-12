@@ -19,10 +19,9 @@ public class Adaptador extends BaseAdapter {
     int[] datosimg;
     int i;
 
-    public Adaptador (Context contexto, String [][] datos, int[] imagenes){
+    public Adaptador (Context contexto, String [][] datos){
         this.contexto = contexto;
         this.datos = datos;
-        this.datosimg = imagenes;
         inflater = (LayoutInflater)contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
     }
     @Override
