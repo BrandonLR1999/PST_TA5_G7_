@@ -9,58 +9,41 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity7 extends AppCompatActivity {
+    String usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main7);
-
-    }
-    public String[][] obtenerDatos(){
-        int contador = 0;
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-        Cursor fila = BaseDeDatos.rawQuery("Select * from Libros", null);
-        int tamano = fila.getCount();
-        String[][] listado = new String[tamano][6];
-        fila.moveToFirst();
-        do {
-            String[] datos_libro = new String[5];
-            datos_libro[0] = fila.getString(1);
-            datos_libro[1] = fila.getString(3);
-            datos_libro[2] = fila.getString(4);
-            datos_libro[3] = fila.getString(2);
-            datos_libro[4] = fila.getString(5);
-            datos_libro[5] = fila.getString(6);
-            listado[contador] = datos_libro;
-            contador += 1;
-        } while (fila.moveToNext());
-        BaseDeDatos.close();
-        admin.close();
-        return listado;
+        Bundle bundle = getIntent().getExtras();
+        usuario = bundle.getString("usuario".toString());
     }
 
     public void terror(View view){
         Intent pasar= new Intent(this,MainActivity4.class);
         pasar.putExtra("genero","Terror");
+        pasar.putExtra("usuario",usuario.toString());
         startActivity(pasar);
     }
 
     public void romance(View view){
         Intent pasar= new Intent(this,MainActivity4.class);
         pasar.putExtra("genero","Romance");
+        pasar.putExtra("usuario",usuario.toString());
         startActivity(pasar);
     }
 
     public void aventura(View view){
         Intent pasar= new Intent(this,MainActivity4.class);
         pasar.putExtra("genero","Aventura");
+        pasar.putExtra("usuario",usuario.toString());
         startActivity(pasar);
     }
 
     public void juvenil(View view){
         Intent pasar= new Intent(this,MainActivity4.class);
         pasar.putExtra("genero","Juvenil");
+        pasar.putExtra("usuario",usuario.toString());
         startActivity(pasar);
     }
 }

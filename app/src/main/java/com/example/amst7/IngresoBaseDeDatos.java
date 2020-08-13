@@ -101,4 +101,9 @@ public class IngresoBaseDeDatos extends AppCompatActivity {
         visualizar1.putExtra("genero","todo");
         startActivity(visualizar1);
     }
+
+    public void volver(View view){
+        Intent volver = new Intent(this, MainActivity.class);
+        startActivity(volver);
+    }
 }
