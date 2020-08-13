@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class IngresoBaseDeDatos extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "TA5"; //Poner en el activity 4
     private EditText codigo,titulo,genero, autor, editorial, url_imagen,descripcion;
+    String usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class IngresoBaseDeDatos extends AppCompatActivity {
         url_imagen = (EditText)findViewById(R.id.editTextImagen);
         descripcion = (EditText)findViewById(R.id.editTextDescripcion);
         editorial = (EditText)findViewById(R.id.editTextEditorial);
+        Bundle bundle = getIntent().getExtras();
+        usuario = bundle.getString("usuario".toString());
     }
 
     //Envio a la base de datos
@@ -94,7 +97,8 @@ public class IngresoBaseDeDatos extends AppCompatActivity {
 
     public void visualizar(View view){
         Intent visualizar1 = new Intent(this,MainActivity4.class);
+        visualizar1.putExtra("usuario",usuario);
+        visualizar1.putExtra("genero","todo");
         startActivity(visualizar1);
-
     }
 }

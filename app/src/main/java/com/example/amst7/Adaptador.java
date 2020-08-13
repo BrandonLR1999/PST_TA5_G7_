@@ -17,11 +17,12 @@ public class Adaptador extends BaseAdapter {
     Context contexto;
     String [][] datos;
     int[] datosimg;
-    int i;
+    int cantidad;
 
-    public Adaptador (Context contexto, String [][] datos){
+    public Adaptador (Context contexto, String [][] datos,int cantidad){
         this.contexto = contexto;
         this.datos = datos;
+        this.cantidad = cantidad;
         inflater = (LayoutInflater)contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
     }
     @Override
@@ -39,9 +40,9 @@ public class Adaptador extends BaseAdapter {
         editorial.setText(datos[i][2]);
         genero.setText(datos[i][3]);
 
-        String imageUrl = datos[i][6];
+        //String imageUrl = datos[i][5];
         //Loading image using Picasso
-        Picasso.get().load(imageUrl).into(imagen);
+        Picasso.get().load("https://eldemocrata.com/wp-content/uploads/2019/12/perro-760x470.jpg").into(imagen);
 
         //imagen.setImageResource(datosimg[i]);
 
@@ -50,7 +51,7 @@ public class Adaptador extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return datosimg.length;
+        return cantidad;
     }
 
     @Override

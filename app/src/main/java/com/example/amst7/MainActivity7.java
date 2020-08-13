@@ -39,9 +39,28 @@ public class MainActivity7 extends AppCompatActivity {
         admin.close();
         return listado;
     }
-    public void click(View view){
+
+    public void terror(View view){
         Intent pasar= new Intent(this,MainActivity4.class);
-        pasar.putExtra("genero","terror");
+        pasar.putExtra("genero","Terror");
+        startActivity(pasar);
+    }
+
+    public void romance(View view){
+        Intent pasar= new Intent(this,MainActivity4.class);
+        pasar.putExtra("genero","Romance");
+        startActivity(pasar);
+    }
+
+    public void aventura(View view){
+        Intent pasar= new Intent(this,MainActivity4.class);
+        pasar.putExtra("genero","Aventura");
+        startActivity(pasar);
+    }
+
+    public void juvenil(View view){
+        Intent pasar= new Intent(this,MainActivity4.class);
+        pasar.putExtra("genero","Juvenil");
         startActivity(pasar);
     }
 }

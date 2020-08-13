@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
             try {
                 Cursor cursor = admin.validar(campousuario.getText().toString(),campopass.getText().toString());
                 if(cursor.getCount()>0){
-                    Toast.makeText(this, "USUARIO EXISTE", Toast.LENGTH_SHORT).show();
                     if(campousuario.getText().toString().equals("admin")) {
                         Intent pasar = new Intent(this, IngresoBaseDeDatos.class);
+                        pasar.putExtra("usuario",campousuario.getText().toString());
                         startActivity(pasar);
                     }
                     else{
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(pasar1);
                     }
                 }   else {
-                    Toast.makeText(this, "Usuario no existe, por favor registrese", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Usuario no existe, por favor regístrese.", Toast.LENGTH_SHORT).show();
                 }
                 campousuario.setText("");
                 campopass.setText("");
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         } else{
-            Toast.makeText(this, "Ingrese Usuario", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ingrese usuario o contraseña.", Toast.LENGTH_SHORT).show();
         }
     }
 }

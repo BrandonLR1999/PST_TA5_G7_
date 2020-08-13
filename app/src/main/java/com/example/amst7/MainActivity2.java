@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public EditText etnombre, etapellido, etusuarioreg, etcontraus, etcorreo, etcell, etcategoriafav;
-    public String strsexo;
+    public Spinner spinner;
     AdminSQLiteOpenHelper1 admin=new AdminSQLiteOpenHelper1(this, "datosregistro1",null,1);
 
     @Override
@@ -22,12 +22,11 @@ public class MainActivity2 extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        Spinner spinner=findViewById(R.id.spinner);
+        spinner=findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.sexo, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-
         etnombre=(EditText)findViewById(R.id.editTextNombre);
         etapellido=(EditText)findViewById(R.id.editTextApellido);
         etusuarioreg=(EditText)findViewById(R.id.editTextNombUsu);
@@ -35,8 +34,8 @@ public class MainActivity2 extends AppCompatActivity implements AdapterView.OnIt
         etcorreo=(EditText)findViewById(R.id.editTextEmail);
         etcell=(EditText)findViewById(R.id.editTextCell);
         etcategoriafav=(EditText)findViewById(R.id.editTextCatFav);
-        strsexo=spinner.getSelectedItem().toString();
     }
+
     public void confirmar(View view){
         registro(view);
         Intent i=new Intent(this, MainActivity.class);
@@ -54,7 +53,7 @@ public class MainActivity2 extends AppCompatActivity implements AdapterView.OnIt
         String correo=etcorreo.getText().toString();
         String celular=etcell.getText().toString();
         String categ=etcategoriafav.getText().toString();
-        String sexo=strsexo;
+        String sexo=spinner.getSelectedItem().toString();;
 
         if(!nombre.isEmpty() && !apellido.isEmpty() && !userreg.isEmpty()
                 && !contra.isEmpty() && !correo.isEmpty() && !celular.isEmpty()
@@ -69,7 +68,7 @@ public class MainActivity2 extends AppCompatActivity implements AdapterView.OnIt
             etcorreo.setText("");
             etcell.setText("");
             etcategoriafav.setText("");
-            strsexo="";
+
         } else {
             Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
         }

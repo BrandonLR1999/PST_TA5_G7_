@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="247dp"
                     android:contentDescription="@string/romantico"
-                    android:onClick="click"
+                    android:onClick="romance"
                     android:src="@drawable/tresmetros" />
 
                 <TextView
@@ -66,6 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="247dp"
                     android:contentDescription="@string/it"
+                    android:onClick="terror"
                     android:src="@drawable/it" />
 
                 <TextView
@@ -92,6 +93,7 @@
                     android:layout_height="238dp"
                     android:background="#FFFFFF"
                     android:contentDescription="@string/quijote"
+                    android:onClick="aventura"
                     android:src="@drawable/quijotee" />
 
                 <TextView
@@ -117,6 +119,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="211dp"
                     android:contentDescription="@string/juvenil"
+                    android:onClick="juvenil"
                     android:src="@drawable/eleanorparkaaa" />
 
                 <TextView
