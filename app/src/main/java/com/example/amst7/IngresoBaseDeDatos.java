@@ -3,6 +3,7 @@ package com.example.amst7;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,6 +19,8 @@ public class IngresoBaseDeDatos extends AppCompatActivity {
     private Spinner genero;
     String usuario;
     String[] generos = {"Género","Romance","Terror","Aventura","Juvenil"};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +71,7 @@ public class IngresoBaseDeDatos extends AppCompatActivity {
         BaseDeDatos.insert("Libros", null, registro);
         BaseDeDatos.close();
     }
+
 
     //Envio a la base de datos
     public void registrar(View view){
@@ -137,6 +141,7 @@ public class IngresoBaseDeDatos extends AppCompatActivity {
             Toast.makeText(this,"Ingrese un código",Toast.LENGTH_LONG).show();
         }
     }
+
 
     public void visualizar(View view){
         Intent visualizar1 = new Intent(this,MainActivity4.class);
