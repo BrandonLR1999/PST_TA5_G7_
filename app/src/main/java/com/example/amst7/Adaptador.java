@@ -40,9 +40,9 @@ public class Adaptador extends BaseAdapter {
         editorial.setText(datos[i][2]);
         genero.setText(datos[i][3]);
 
-        //String imageUrl = datos[i][5];
+        String imageUrl = datos[i][5];
         //Loading image using Picasso
-        Picasso.get().load("https://eldemocrata.com/wp-content/uploads/2019/12/perro-760x470.jpg").into(imagen);
+        Picasso.get().load(imageUrl).into(imagen);
 
         //imagen.setImageResource(datosimg[i]);
 

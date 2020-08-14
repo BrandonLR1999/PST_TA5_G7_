@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -45,32 +46,45 @@ public class MainActivity4<i> extends AppCompatActivity {
     }
 
     public void llenarVistaLibros(String busqueda, String subquery){
-        String query = "select * from Libros";
-        if(!busqueda.equals("")){
-            query = query+" where " +busqueda+ " like '"+subquery+"'";
+        try{
+            String query = "select * from Libros";
+            if(!busqueda.equals("")){
+                query = query+" where " +busqueda+ " like '"+subquery+"'";
+            }
+            int contador = 0;
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+            SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+            Cursor fila = BaseDeDatos.rawQuery(query, null);
+            int tamano = fila.getCount();
+            final String[][] listado = new String[tamano][6];
+            fila.moveToFirst();
+            do {
+                String[] datos_libro = new String[6];
+                datos_libro[0] = fila.getString(1);
+                datos_libro[1] = fila.getString(3);
+                datos_libro[2] = fila.getString(4);
+                datos_libro[3] = fila.getString(2);
+                datos_libro[4] = fila.getString(5);
+                datos_libro[5] = fila.getString(6);
+                listado[contador] = datos_libro;
+                contador += 1;
+            } while (fila.moveToNext());
+            BaseDeDatos.close();
+            admin.close();
+            lista = (ListView) findViewById(R.id.id_listView);
+            lista.setAdapter(new Adaptador(this, listado,tamano));
+            lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long id) {
+                    Intent detalles = new Intent(view.getContext(),MainActivity5.class);
+                    detalles.putExtra("Titulo",listado[posicion][0]);
+                    detalles.putExtra("Descripcion",listado[posicion][4]);
+                    startActivity(detalles);
+                }
+            });
+        }catch (Exception e){
+            Toast.makeText(this,"Ingrese el nombre completo del libro o un nombre válido.",Toast.LENGTH_SHORT).show();
         }
-        int contador = 0;
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-        Cursor fila = BaseDeDatos.rawQuery(query, null);
-        int tamano = fila.getCount();
-        String[][] listado = new String[tamano][6];
-        fila.moveToFirst();
-        do {
-            String[] datos_libro = new String[6];
-            datos_libro[0] = fila.getString(1);
-            datos_libro[1] = fila.getString(3);
-            datos_libro[2] = fila.getString(4);
-            datos_libro[3] = fila.getString(2);
-            datos_libro[4] = fila.getString(5);
-            datos_libro[5] = fila.getString(6);
-            listado[contador] = datos_libro;
-            contador += 1;
-        } while (fila.moveToNext());
-        BaseDeDatos.close();
-        admin.close();
-        lista = (ListView) findViewById(R.id.id_listView);
-        lista.setAdapter(new Adaptador(this, listado,tamano));
     }
 
     public void busqueda(View view){

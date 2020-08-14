@@ -73,15 +73,14 @@
             android:hint="Editorial"
             android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editTextGenero"
+        <Spinner
+            android:id="@+id/Generos"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:hint="Genero"
-            android:inputType="textPersonName" />
+            android:entries="@array/generos" />
 
         <EditText
             android:id="@+id/editTextImagen"
@@ -156,6 +155,7 @@
                 android:layout_marginStart="0dp"
                 android:background="@drawable/botones"
                 android:fontFamily="@font/actor"
+                android:onClick="borrarDB"
                 android:text="BORRAR"
                 android:textColor="#FFFFFF" />
 
@@ -173,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/botones"
                 android:fontFamily="@font/actor"
-                android:onClick="visualizar"
+                android:onClick="volver"
                 android:text="Inicio"
                 android:textColor="#FFFFFF" />
 
