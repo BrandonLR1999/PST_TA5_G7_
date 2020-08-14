@@ -77,6 +77,7 @@
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#277480"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal">
 
@@ -86,9 +87,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_weight="1"
+            android:background="@drawable/botones"
             android:onClick="verPerfil"
-            app:srcCompat="@drawable/perfil"
-            android:background="@drawable/style_borde"/>
+            app:srcCompat="@drawable/perfil" />
 
         <ImageView
             android:id="@+id/imageView3"
@@ -96,9 +97,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_weight="1"
+            android:background="@drawable/botones"
             android:onClick="inicio"
-            app:srcCompat="@drawable/home"
-            android:background="@drawable/style_borde"/>
+            app:srcCompat="@drawable/home" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -106,9 +107,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_weight="1"
+            android:background="@drawable/botones"
             android:onClick="verCategoria"
-            app:srcCompat="@drawable/cat"
-            android:background="@drawable/style_borde"/>
+            app:srcCompat="@drawable/cat" />
     </LinearLayout>
 
 </LinearLayout>

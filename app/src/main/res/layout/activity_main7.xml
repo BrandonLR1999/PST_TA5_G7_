@@ -44,7 +44,7 @@
 
                 <ImageButton
                     android:id="@+id/imageRomantico"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="250dp"
                     android:contentDescription="@string/romantico"
                     android:onClick="romance"
@@ -71,7 +71,7 @@
 
                 <ImageButton
                     android:id="@+id/imageeTerror"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="250dp"
                     android:contentDescription="@string/it"
                     android:onClick="terror"
@@ -97,7 +97,7 @@
 
                 <ImageButton
                     android:id="@+id/imageAventura"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="250dp"
                     android:background="#FFFFFF"
                     android:contentDescription="@string/quijote"
@@ -124,7 +124,7 @@
 
                 <ImageButton
                     android:id="@+id/imageJuvenil"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="210dp"
                     android:contentDescription="@string/juvenil"
                     android:onClick="juvenil"
@@ -159,7 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_weight="1"
-            android:background="@drawable/style_borde"
+            android:background="@drawable/botones"
             android:contentDescription="@string/botonperfilCat"
             app:srcCompat="@drawable/perfil" />
 
@@ -169,7 +169,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_weight="1"
-            android:background="@drawable/style_borde"
+            android:background="@drawable/botones"
             android:contentDescription="@string/botonhomeCat"
             app:srcCompat="@drawable/home" />
 
@@ -179,7 +179,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_weight="1"
-            android:background="@drawable/style_borde"
+            android:background="@drawable/botones"
             android:contentDescription="@string/botoncatCat"
             app:srcCompat="@drawable/cat" />
     </LinearLayout>
