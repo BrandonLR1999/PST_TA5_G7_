@@ -108,13 +108,9 @@ public class MainActivity6 extends AppCompatActivity implements View.OnClickList
         Intent cat= new Intent(this,MainActivity7.class);
         cat.putExtra("usuario",nombreUsuario.toString());
         startActivity(cat);
+        finish();
     }
 
-    public void verPerfil(View view){
-        Intent perfil = new Intent(this,MainActivity6.class);
-        perfil.putExtra("usuario",nombreUsuario.toString());
-        startActivity(perfil);
-    }
     public void setAvatar(String nArchi){
         String uri = "@drawable/"+ nArchi;
         int imageResource = getResources().getIdentifier(uri, null, getPackageName());
@@ -122,7 +118,11 @@ public class MainActivity6 extends AppCompatActivity implements View.OnClickList
         avatar.setImageDrawable(imagen);
     }
 
-    /*public void inicio(View view){
-        llenarVistaLibros("","");
-    }*/
+    public void Home(View view){
+        Intent home = new Intent(this,MainActivity4.class);
+        home.putExtra("genero","");
+        home.putExtra("usuario",nombreUsuario.toString());
+        startActivity(home);
+        finish();
+    }
 }

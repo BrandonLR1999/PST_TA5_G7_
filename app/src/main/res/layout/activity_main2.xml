@@ -19,13 +19,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/volver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botones"
+        android:fontFamily="@font/actor"
+        android:onClick="volver"
+        android:text="Volver"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <Button
         android:id="@+id/confirmarregistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/botones"
+        android:fontFamily="@font/actor"
         android:onClick="confirmar"
         android:text="@string/confirmar"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 

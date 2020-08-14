@@ -37,12 +37,14 @@ public class MainActivity4<i> extends AppCompatActivity {
         Intent cat= new Intent(this,MainActivity7.class);
         cat.putExtra("usuario",usuario.toString());
         startActivity(cat);
+        finish();
     }
 
     public void verPerfil(View view){
         Intent perfil = new Intent(this,MainActivity6.class);
         perfil.putExtra("usuario",usuario.toString());
         startActivity(perfil);
+        finish();
     }
 
     public void llenarVistaLibros(String busqueda, String subquery){

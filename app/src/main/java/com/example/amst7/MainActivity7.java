@@ -24,6 +24,7 @@ public class MainActivity7 extends AppCompatActivity {
         pasar.putExtra("genero","Terror");
         pasar.putExtra("usuario",usuario.toString());
         startActivity(pasar);
+        finish();
     }
 
     public void romance(View view){
@@ -31,6 +32,7 @@ public class MainActivity7 extends AppCompatActivity {
         pasar.putExtra("genero","Romance");
         pasar.putExtra("usuario",usuario.toString());
         startActivity(pasar);
+        finish();
     }
 
     public void aventura(View view){
@@ -38,6 +40,7 @@ public class MainActivity7 extends AppCompatActivity {
         pasar.putExtra("genero","Aventura");
         pasar.putExtra("usuario",usuario.toString());
         startActivity(pasar);
+        finish();
     }
 
     public void juvenil(View view){
@@ -45,5 +48,20 @@ public class MainActivity7 extends AppCompatActivity {
         pasar.putExtra("genero","Juvenil");
         pasar.putExtra("usuario",usuario.toString());
         startActivity(pasar);
+        finish();
+    }
+
+    public void verPerfil(View view){
+        Intent perfil = new Intent(this,MainActivity6.class);
+        perfil.putExtra("usuario",usuario.toString());
+        startActivity(perfil);
+        finish();
+    }
+    public void Home(View view){
+        Intent home = new Intent(this,MainActivity4.class);
+        home.putExtra("genero","todo");
+        home.putExtra("usuario",usuario.toString());
+        startActivity(home);
+        finish();
     }
 }

@@ -42,6 +42,11 @@ public class MainActivity2 extends AppCompatActivity implements AdapterView.OnIt
         startActivity(i);
         finish();
     }
+    public void volver(View view){
+        Intent i=new Intent(this, MainActivity.class);
+        startActivity(i);
+        finish();
+    }
 
     public void registro(View view){
         admin.abrir();

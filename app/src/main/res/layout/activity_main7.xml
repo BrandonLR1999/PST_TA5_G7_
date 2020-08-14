@@ -4,29 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#277480"
+    android:background="#FFFFFF"
     android:divider="@drawable/ic_launcher_background"
     android:gravity="center_horizontal|center_vertical"
     android:orientation="vertical"
     tools:context=".MainActivity7">
 
-    <TextView
-        android:id="@+id/categoriaEncabezado"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        android:background="#277480"
-        android:fontFamily="@font/actor"
-        android:gravity="center_vertical"
-        android:text="@string/categor_as"
-        android:textAlignment="viewStart"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:ignore="RtlCompat" />
+        android:layout_height="40dp"
+        android:background="#277480">
+
+        <TextView
+            android:id="@+id/categoriaEncabezado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="#277480"
+            android:fontFamily="@font/actor"
+            android:text="@string/categor_as"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -150,6 +156,7 @@
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="#277480"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal">
 
@@ -161,6 +168,7 @@
             android:layout_weight="1"
             android:background="@drawable/botones"
             android:contentDescription="@string/botonperfilCat"
+            android:onClick="verPerfil"
             app:srcCompat="@drawable/perfil" />
 
         <ImageView
@@ -171,6 +179,7 @@
             android:layout_weight="1"
             android:background="@drawable/botones"
             android:contentDescription="@string/botonhomeCat"
+            android:onClick="Home"
             app:srcCompat="@drawable/home" />
 
         <ImageView
