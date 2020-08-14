@@ -36,6 +36,9 @@
     <string name="aventura">AVENTURA</string>
     <string name="juvenil">juvenil</string>
     <string name="juvenilText">JUVENIL</string>
+    <string name="botonperfilCat">botonPerfil</string>
+    <string name="botonhomeCat">botonHome</string>
+    <string name="botoncatCat">botonCat</string>
     <string-array name="sexo">
         <item>Sexo</item>
         <item>Masculino</item>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFCDD2"
+    android:background="#277480"
     android:divider="@drawable/ic_launcher_background"
     android:gravity="center_horizontal|center_vertical"
     android:orientation="vertical"
@@ -14,15 +14,24 @@
         android:id="@+id/categoriaEncabezado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D17575"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="#277480"
+        android:fontFamily="@font/actor"
         android:gravity="center_vertical"
         android:text="@string/categor_as"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textAlignment="viewStart"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:ignore="RtlCompat" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,13 +40,12 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="?attr/listPreferredItemPaddingEnd">
+                android:layout_height="match_parent">
 
                 <ImageButton
                     android:id="@+id/imageRomantico"
                     android:layout_width="match_parent"
-                    android:layout_height="247dp"
+                    android:layout_height="250dp"
                     android:contentDescription="@string/romantico"
                     android:onClick="romance"
                     android:src="@drawable/tresmetros" />
@@ -59,12 +67,12 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="?attr/listPreferredItemPaddingStart">
+                android:layout_marginTop="10dp">
 
                 <ImageButton
                     android:id="@+id/imageeTerror"
-                    android:layout_width="wrap_content"
-                    android:layout_height="247dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
                     android:contentDescription="@string/it"
                     android:onClick="terror"
                     android:src="@drawable/it" />
@@ -85,12 +93,12 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="?attr/listPreferredItemPaddingStart">
+                android:layout_marginTop="10dp">
 
                 <ImageButton
                     android:id="@+id/imageAventura"
                     android:layout_width="match_parent"
-                    android:layout_height="238dp"
+                    android:layout_height="250dp"
                     android:background="#FFFFFF"
                     android:contentDescription="@string/quijote"
                     android:onClick="aventura"
@@ -112,12 +120,12 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="?attr/listPreferredItemPaddingStart">
+                android:layout_marginTop="10dp">
 
                 <ImageButton
                     android:id="@+id/imageJuvenil"
                     android:layout_width="match_parent"
-                    android:layout_height="211dp"
+                    android:layout_height="210dp"
                     android:contentDescription="@string/juvenil"
                     android:onClick="juvenil"
                     android:src="@drawable/eleanorparkaaa" />
@@ -132,9 +140,48 @@
                     android:textColor="#000000"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
             </FrameLayout>
 
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/style_borde"
+            android:contentDescription="@string/botonperfilCat"
+            app:srcCompat="@drawable/perfil" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/style_borde"
+            android:contentDescription="@string/botonhomeCat"
+            app:srcCompat="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/style_borde"
+            android:contentDescription="@string/botoncatCat"
+            app:srcCompat="@drawable/cat" />
+    </LinearLayout>
 
 </LinearLayout>
