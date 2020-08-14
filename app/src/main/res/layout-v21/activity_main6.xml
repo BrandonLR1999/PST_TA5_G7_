@@ -87,6 +87,7 @@
             android:layout_marginEnd="20dp"
             android:background="@drawable/style_borde"
             android:backgroundTint="#A1D2D8"
+            android:contentDescription="@string/nombres"
             android:cursorVisible="false"
             android:fontFamily="@font/actor"
             android:text="Nombres:"
@@ -185,7 +186,7 @@
             android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="parent" tools:targetApi="lollipop" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView8"

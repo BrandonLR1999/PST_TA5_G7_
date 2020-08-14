@@ -1,19 +1,22 @@
 package com.example.amst7;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity6 extends AppCompatActivity implements View.OnClickListener {
+    private ImageView avatar;
     private TextView nomUsuario;
     private String nombreUsuario;
     private TextView name;
@@ -30,23 +33,23 @@ public class MainActivity6 extends AppCompatActivity implements View.OnClickList
         nomUsuario = (TextView)findViewById(R.id.textView);
         Bundle bundle = getIntent().getExtras();
         nombreUsuario = bundle.getString("usuario".toString());
-        Log.i("Nombre",nombreUsuario);
         nomUsuario.setText(nombreUsuario);
         name= (TextView)findViewById(R.id.textView7);
         lastname= (TextView)findViewById(R.id.textView8);
         email= (TextView)findViewById(R.id.textView9);
         phone= (TextView)findViewById(R.id.textView10);
         fav= (TextView)findViewById(R.id.textView11);
-        //avatarUsuario();
+        avatar = (ImageView)findViewById(R.id.imageView15);
+        avatarUsuario();
         mostrarDatos();
         ImageButton exit = (ImageButton)findViewById(R.id.imageButton);
-        //exit.setOnClickListener((View.OnClickListener)this);
+        exit.setOnClickListener((View.OnClickListener)this);
     }
 
     @Override
     public void onClick(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity6.this);
-        builder.setMessage("¿Seguro que desea salir?");
+        builder.setMessage("¿Seguro que desea cerrar sesión?");
         builder.setCancelable(true);
         builder.setNegativeButton("Si", new DialogInterface.OnClickListener() {
             @Override
@@ -67,8 +70,20 @@ public class MainActivity6 extends AppCompatActivity implements View.OnClickList
     }
 
     public void avatarUsuario(){
+        SQLiteDatabase baseDatos = admin.getReadableDatabase();
+        Cursor fila = baseDatos.rawQuery("select sexo from usuarios1 where usuario = " + "'"+nombreUsuario+"'", null);
+        if (fila.moveToFirst()){
+            if (fila.getString(0).equals("Femenino")){
+                setAvatar("avatarf");
+            }else{
+                setAvatar("avatarm");
+            }
+            baseDatos.close();
+        }else{
+            Toast.makeText(this, "No existe usuario.", Toast.LENGTH_SHORT).show();
+            baseDatos.close();
+        }
     }
-
     public void mostrarDatos(){
         SQLiteDatabase baseDatos = admin.getReadableDatabase();
         Cursor fila = baseDatos.rawQuery("select nombre,apellido,correo,celular,categoriafav from usuarios1 where usuario = " + "'"+nombreUsuario+"'", null);
@@ -89,4 +104,25 @@ public class MainActivity6 extends AppCompatActivity implements View.OnClickList
             Toast.makeText(this, "VACIO", Toast.LENGTH_SHORT).show();
         }
     }
+    public void verCategoria(View view) {
+        Intent cat= new Intent(this,MainActivity7.class);
+        cat.putExtra("usuario",nombreUsuario.toString());
+        startActivity(cat);
+    }
+
+    public void verPerfil(View view){
+        Intent perfil = new Intent(this,MainActivity6.class);
+        perfil.putExtra("usuario",nombreUsuario.toString());
+        startActivity(perfil);
+    }
+    public void setAvatar(String nArchi){
+        String uri = "@drawable/"+ nArchi;
+        int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+        Drawable imagen = ContextCompat.getDrawable(getApplicationContext(), imageResource);
+        avatar.setImageDrawable(imagen);
+    }
+
+    /*public void inicio(View view){
+        llenarVistaLibros("","");
+    }*/
 }

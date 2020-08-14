@@ -39,6 +39,7 @@
     <string name="botonperfilCat">botonPerfil</string>
     <string name="botonhomeCat">botonHome</string>
     <string name="botoncatCat">botonCat</string>
+    <string name="inicio">inicio</string>
     <string-array name="sexo">
         <item>Sexo</item>
         <item>Masculino</item>
