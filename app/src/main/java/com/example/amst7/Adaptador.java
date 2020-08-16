@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 public class Adaptador extends BaseAdapter {
@@ -32,7 +33,7 @@ public class Adaptador extends BaseAdapter {
         TextView autor = (TextView)vista.findViewById(R.id.autor);
         TextView editorial = (TextView)vista.findViewById(R.id.editorial);
         TextView genero = (TextView)vista.findViewById(R.id.genero);
-        ImageView imagen = (ImageView) vista.findViewById(R.id.imageView);
+        final ImageView imagen = (ImageView) vista.findViewById(R.id.imageView);
 
 
         titulo.setText(datos[i][0]);
@@ -40,12 +41,23 @@ public class Adaptador extends BaseAdapter {
         editorial.setText(datos[i][2]);
         genero.setText(datos[i][3]);
 
-        String imageUrl = datos[i][5];
-        //Loading image using Picasso
-        Picasso.get().load(imageUrl).into(imagen);
 
-        //imagen.setImageResource(datosimg[i]);
+        final String imageUrl = datos[i][5];
 
+
+        Picasso.get()
+                .load(imageUrl)
+                .into(imagen, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        Picasso.get().load(imageUrl).into(imagen);
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        imagen.setImageResource(R.drawable.portada4);
+                    }
+                });
         return vista;
     }
 
