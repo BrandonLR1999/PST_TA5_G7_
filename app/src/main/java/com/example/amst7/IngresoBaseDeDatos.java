@@ -33,7 +33,7 @@ public class IngresoBaseDeDatos extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         usuario = bundle.getString("usuario".toString());
         //juvenil
-        generarPrimerosLibros("1","Cazadores de sombras: Ciudad de Hueso","Juvenil","Cassandra Clare","Destino Infantil & Juvenil","En el Pandemonium, la discoteca de moda de Nueva York, Clary sigue a un atractivo chico de pelo azul hasta que presencia su muerte a manos de tres jóvenes cubiertos de extraños tatuajes. Desde esa noche, su destino se une al de esos tres cazadores de sombras, guerreros dedicados a liberar a la tierra de demonios y, sobre todo, al de Jace, un chico con aspecto de ángel y tendencia a actuar como un idiota.","https://static2planetadelibroscom.cdnstatics.com/usuaris/libros/fotos/212/m_libros/portada_ciudad-de-hueso_cassandra-clare_201602251706.jpg");
+        /*generarPrimerosLibros("1","Cazadores de sombras: Ciudad de Hueso","Juvenil","Cassandra Clare","Destino Infantil & Juvenil","En el Pandemonium, la discoteca de moda de Nueva York, Clary sigue a un atractivo chico de pelo azul hasta que presencia su muerte a manos de tres jóvenes cubiertos de extraños tatuajes. Desde esa noche, su destino se une al de esos tres cazadores de sombras, guerreros dedicados a liberar a la tierra de demonios y, sobre todo, al de Jace, un chico con aspecto de ángel y tendencia a actuar como un idiota.","https://static2planetadelibroscom.cdnstatics.com/usuaris/libros/fotos/212/m_libros/portada_ciudad-de-hueso_cassandra-clare_201602251706.jpg");
         generarPrimerosLibros("2","La Selección","Juvenil","Kiera Cass","N.A","La oportunidad de escapar de la vida que les ha tocado por nacer en una determinada familia. La oportunidad de que las trasladen a un mundo de trajes preciosos y joyas que no tienen precio. La oportunidad de vivir en un palacio y de competir por el corazón del guapísimo príncipe Maxon.","https://www.rocalibros.com/archivos/imagenes/mayores/1522.jpg");
         generarPrimerosLibros("3","Invisible","Juvenil","Eloy Moreno","Nube de Tinta","¿Quién no ha deseado alguna vez ser invisible?\n" +
                 "¿Quién no ha deseado alguna vez dejar de serlo?\n" +
@@ -52,9 +52,9 @@ public class IngresoBaseDeDatos extends AppCompatActivity {
         generarPrimerosLibros("10","La vuelta al mundo en ochenta días","Aventura","Julio Verne","Pierre-Jules Hetzel","El señor Phileas Fogg, un misterioso y solitario caballero inglés, abandonará su vida disciplinada para cumplir una apuesta con los miembros del Reform Club, en la que arriesgará una parte de su fortuna comprometiéndose a dar la vuelta al mundo en ochenta días utilizando los medios disponibles en la época.","https://imagessl.tagusbooks.com/a/l/t0/48/9788026834748.jpg");
         generarPrimerosLibros("11","Moby-Dick","Aventura","Herman Melville","DEBATE","Moby Dick , la novela que William Faulkner hubiera querido escribir, ha alcanzado el reconocimiento y el elogio constante que merece una construcción narrativa impecable. La lucha del capitán Ahab, su terrible obsesión y la mítica persecución de la enorme ballena han traspasado fronteras, consiguiendo así la indiscutible categoría de obra maestra de la literatura universal.","https://imagessl2.casadellibro.com/a/l/t5/52/9788499086552.jpg");
         generarPrimerosLibros("12","El señor de Ballantrae","Aventura","Robert Louis Stevenson","Cassell","Es la historia de los dos hijos de Lord Durrisdeer, a los que el destino enfrentó de la cuna a la sepultura con la ceguera de lo inexplicable. Es una novela dinámica y aventurera en la que Stevenson engarza la nostalgia por la lejana Escocia, a la que nunca más regresaría, con sus experiencias y viajes por Norteamérica.","https://m.media-amazon.com/images/I/51Gz9aylPOL.jpg");
-    }
+    */}
     //
-    public void generarPrimerosLibros(String Codigo,String Titulo,String Genero,String Autor,String Editorial,String Descripcion,String Imagen){
+    /*public void generarPrimerosLibros(String Codigo,String Titulo,String Genero,String Autor,String Editorial,String Descripcion,String Imagen){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion",null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
         ContentValues registro = new ContentValues();
@@ -67,7 +67,7 @@ public class IngresoBaseDeDatos extends AppCompatActivity {
         registro.put("Imagen",Imagen);
         BaseDeDatos.insert("Libros", null, registro);
         BaseDeDatos.close();
-    }
+    }*/
 
     //Envio a la base de datos
     public void registrar(View view){
